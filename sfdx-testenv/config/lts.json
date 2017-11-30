@@ -1,0 +1,29 @@
+{
+  "drivers": {
+    "chrome": {
+      "version": 2.33,
+      "arch": "x64",
+      "baseURL": "https://chromedriver.storage.googleapis.com"
+    }
+  },
+  "requestOpts": {
+    "timeout": 100000
+  },
+  "webdriverio": {
+    "desiredCapabilities": {
+      "browserName": "chrome",
+      "loggingPrefs": {
+        "browser": "ALL",
+        "driver": "ALL",
+        "performance": "ALL"
+      },
+      "chromeOptions": {
+        "args": [
+          "--headless",
+          "--disable-gpu",
+          "--no-sandbox"
+        ]
+      }
+    }
+  }
+}
