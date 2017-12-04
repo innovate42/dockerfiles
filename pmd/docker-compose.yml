@@ -1,0 +1,19 @@
+# Run with:
+# docker-compose run -v ~/IdeaProjects/sf-icAssist-master/force-app/main/default/classes/:/home/headless/src pmd
+
+version: '3'
+services:
+  pmd:
+    build: .
+    networks:
+      nonet: {}
+    entrypoint: ./pmd-bin-5.8.1/bin/run.sh pmd -debug -rulesets custom-rulesets/apex/security.xml -d ./src
+
+networks:
+  nonet:
+    external:
+      name: none
+
+  hostnet:
+    external:
+      name: host
